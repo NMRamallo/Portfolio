@@ -25,10 +25,29 @@ html {
 
 body {
     background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(circle at 50% 50%, #1a1f2c 0%, #0a0a0a 70%),
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    background-attachment: fixed;
     color: var(--text-primary);
     font-family: var(--font-primary);
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+/* Contact Icon SVG styling */
+.contact-item svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    transition: var(--transition);
+}
+
+.contact-item:hover svg {
+    fill: var(--accent-cyan);
+    filter: drop-shadow(0 0 5px var(--accent-cyan));
 }
 
 a {

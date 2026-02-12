@@ -163,6 +163,18 @@
             <div class="container">
                 <h2 class="section-title">Projects</h2>
                 <div class="projects-grid">
+                    <!-- 
+                        HOW TO ADD PROJECT IMAGES:
+                        1. Save your image (e.g., 'my-game.jpg') into the 'assets' folder.
+                        2. Find the 'project-image' div for the specific project below.
+                        3. Change the url portion of the style attribute:
+                           FROM: url('assets/placeholder_bot.jpg')
+                           TO:   url('assets/my-game.jpg')
+                        
+                        Example:
+                        <div class="project-image" style="background-image: linear-gradient(to bottom, transparent, #0a0a0a), url('assets/super-cool-game.png');">
+                        </div>
+                    -->
                     <!-- Python Bot -->
                     <div class="project-card">
                         <div class="project-image"
@@ -256,7 +268,13 @@
                     <p>Interested in working together or have a question? Feel free to reach out.</p>
                     <div class="contact-links">
                         <a href="mailto:nicomramallo@gmail.com" class="contact-item">
-                            <span class="icon">✉️</span>
+                            <span class="icon">
+                                <!-- Mailbox Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" class="mailbox-bg"/>
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </span>
                             <span>nicomramallo@gmail.com</span>
                         </a>
                         <a href="https://www.linkedin.com/in/nicolas-ramallo" target="_blank" class="contact-item">
