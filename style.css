@@ -25,7 +25,7 @@ html {
 
 body {
     background-color: var(--bg-color);
-    background-image: 
+    background-image:
         radial-gradient(circle at 50% 50%, #1a1f2c 0%, #0a0a0a 70%),
         linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
@@ -434,6 +434,7 @@ ul {
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition);
+    text-align: left;
 }
 
 .timeline-content:hover {
