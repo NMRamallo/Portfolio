@@ -158,6 +158,36 @@ ul {
 .hamburger {
     display: none;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 26px;
+    height: 2px;
+    margin: 6px 0;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.hamburger:hover .bar {
+    background: var(--accent-cyan);
+}
+
+/* Animate into an X while the menu is open */
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Hero Section */
@@ -467,6 +497,21 @@ ul {
 }
 
 /* Projects Grid */
+.projects-subtitle {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-green);
+    margin: 0 0 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+}
+
+.projects-grid + .projects-subtitle {
+    margin-top: 60px;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -498,11 +543,43 @@ ul {
     /* Fallback */
 }
 
+/* Cards with no screenshot: generated cover instead of a broken image box */
+.project-image.no-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(135deg, rgba(57, 255, 20, 0.06) 0%, transparent 60%),
+        linear-gradient(160deg, #12161f 0%, #0a0a0a 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-image.no-photo span {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-green);
+    text-shadow: 0 0 14px rgba(57, 255, 20, 0.35);
+}
+
 .project-info {
     padding: 25px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+}
+
+/* Small caption used where a project has no public link.
+   Needs `.project-info` in the selector to outrank `.project-info p`,
+   which sets flex-grow:1 and would otherwise stretch this line too. */
+.project-info p.project-note {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    font-style: italic;
+    margin: 0;
+    flex-grow: 0;
 }
 
 .project-info h3 {
@@ -608,9 +685,30 @@ ul {
 
 /* Responsive */
 @media (max-width: 768px) {
+    /* The custom cursor has no meaning on touch and otherwise parks
+       a stray dot in the top-left corner. */
+    .cursor,
+    .cursor-follower {
+        display: none;
+    }
+
     .nav-links {
         display: none;
-        /* Hide for now, can implement mobile menu later if robust */
+    }
+
+    /* Opened by JS toggling .active on the list */
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 25px 20px;
+        background: rgba(10, 10, 10, 0.97);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .hamburger {
@@ -618,10 +716,12 @@ ul {
         z-index: 101;
     }
 
-    /* Mobile Menu Implementation can be added via JS */
-
     .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .projects-subtitle {
+        font-size: 1rem;
     }
 
     .timeline::after {
@@ -660,4 +760,25 @@ ul {
 .fade-up.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Respect users who ask the OS to reduce motion */
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .fade-up {
+        opacity: 1;
+        transform: none;
+    }
 }

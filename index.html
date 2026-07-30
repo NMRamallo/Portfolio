@@ -4,22 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicolas Ramallo | Game Developer & AI Specialist</title>
+    <title>Nicolás Ramallo | AI Engineer</title>
     <meta name="description"
-        content="Portfolio of Marcelo Nicolás Ramallo De Dios, a Virtual Simulations & Videogames Developer specializing in Unreal Engine, AI Automation, and C++.">
+        content="AI Engineer based in Córdoba, Argentina. I build LLM-powered assistants and automations connected to real company systems — n8n, RAG, MCP and tool calling — with a background in C++ and multiplayer engineering.">
+
+    <!-- Social preview (LinkedIn, Slack, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nmramallo.github.io/Portfolio/">
+    <meta property="og:title" content="Nicolás Ramallo | AI Engineer">
+    <meta property="og:description"
+        content="I build LLM-powered assistants and automations connected to the systems a company actually runs on.">
+    <meta name="twitter:card" content="summary">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <!-- Placeholder for FontAwesome -->
 </head>
 
 <body>
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-follower" aria-hidden="true"></div>
 
     <header class="header">
         <nav class="navbar">
@@ -28,14 +35,14 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="assets/cv.pdf" target="_blank">Resume</a></li>
+                <li><a href="assets/cv.pdf" target="_blank" rel="noopener">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </nav>
     </header>
 
@@ -43,15 +50,16 @@
         <!-- Hero Section -->
         <section id="hero" class="hero">
             <div class="container">
-                <h1 class="glitch" data-text="Nicolas Ramallo">Nicolas Ramallo</h1>
-                <h2 class="subtitle">Virtual Simulations & Videogames Developer</h2>
-                <p class="description">Specializing in Unreal Engine, C++, and AI Automation.</p>
+                <h1>Nicolás Ramallo</h1>
+                <h2 class="subtitle">AI Engineer</h2>
+                <p class="description">I build LLM-powered assistants and automations connected to the systems a
+                    company actually runs on.</p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
                     <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
             </div>
-            <div class="scroll-down">
+            <div class="scroll-down" aria-hidden="true">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -64,46 +72,68 @@
                 <h2 class="section-title">About Me</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <h3>Marcelo Nicolás Ramallo De Dios</h3>
-                        <p>I am a Game Developer based in Córdoba, Argentina, specializing in Unreal Engine and C++.</p>
-                        <p>With a background in Virtual Simulations and Industrial Design, I focus on the technical
-                            implementation of gameplay systems. My approach combines a solid understanding of 3D
-                            environments with clean, functional code.</p>
-                        <p>Currently, I spend most of my time inside Unreal, though I also have experience working with
-                            AI and Python when the project requires it. I’m interested in building systems that are
-                            efficient, scalable, and feel right for the player.</p>
+                        <p>I build AI systems that do real work inside a company — assistants people actually use,
+                            wired into the tools they already have.</p>
+
+                        <p>At <strong>Cintelink</strong> I design and operate LLM-powered automations: an internal
+                            Slack assistant, now in its second iteration; retrieval over company documentation so
+                            answers are grounded in real sources instead of model memory; and integrations that let
+                            the model <em>act</em> on Jira, Drive and internal services rather than just reply. Most
+                            of it is orchestrated in n8n.</p>
+
+                        <p>Before AI I spent about two years in <strong>Unreal Engine and C++</strong>, building
+                            replicated multiplayer systems. That background is why I treat LLM work as engineering:
+                            state, latency and failure modes are familiar problems wearing new clothes.</p>
+
+                        <p>I try to measure before adopting. When I evaluated <strong>GraphRAG</strong> as an upgrade
+                            to our retrieval pipeline, the gains didn't justify the added complexity and cost — so I
+                            recommended against it. Knowing when <em>not</em> to add a technology is part of the job.</p>
 
                         <h3 class="skills-title">Skills</h3>
                         <div class="skills-grid">
                             <div class="skill-category">
-                                <h4>Game Dev</h4>
-                                <div class="tags">
-                                    <span>Unreal Engine 4/5</span>
-                                    <span>Unity</span>
-                                    <span>C++</span>
-                                    <span>Blueprints</span>
-                                    <span>Gameplay Ability System (GAS)</span>
-                                    <span>Networking</span>
-                                    <span>Behavior Trees</span>
-                                </div>
-                            </div>
-                            <div class="skill-category">
-                                <h4>Automation & AI</h4>
+                                <h4>AI &amp; LLM Systems</h4>
                                 <div class="tags">
                                     <span>n8n</span>
-                                    <span>Python</span>
                                     <span>OpenAI API</span>
-                                    <span>Slack Bolt SDK</span>
                                     <span>RAG</span>
+                                    <span>MCP</span>
+                                    <span>Tool / Function Calling</span>
+                                    <span>Contextual Memory</span>
+                                    <span>Prompt Engineering</span>
                                 </div>
                             </div>
                             <div class="skill-category">
-                                <h4>Tools & Others</h4>
+                                <h4>Integrations</h4>
                                 <div class="tags">
-                                    <span>Git/GitHub</span>
+                                    <span>REST APIs</span>
+                                    <span>Slack Bolt SDK</span>
+                                    <span>Jira</span>
+                                    <span>Google Drive API</span>
+                                    <span>Webhooks</span>
+                                    <span>Python</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Engineering Foundations</h4>
+                                <div class="tags">
+                                    <span>C++</span>
+                                    <span>Unreal Engine 4/5</span>
+                                    <span>Multiplayer Replication</span>
+                                    <span>Gameplay Ability System</span>
+                                    <span>Behavior Trees</span>
+                                    <span>Unity / C#</span>
+                                    <span>JavaScript</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Tools &amp; Process</h4>
+                                <div class="tags">
+                                    <span>Git / GitHub</span>
+                                    <span>Bitbucket</span>
                                     <span>SourceTree</span>
                                     <span>Jira</span>
-                                    <span>REST APIs</span>
+                                    <span>Code Review</span>
                                 </div>
                             </div>
                         </div>
@@ -122,12 +152,21 @@
                         <div class="timeline-date">Oct 2024 - Present</div>
                         <div class="timeline-content">
                             <h3>IT Analyst / AI Developer</h3>
-                            <h4>Cintelink</h4>
+                            <h4>Cintelink — Córdoba, Argentina</h4>
                             <ul>
-                                <li><strong>Cintelink Bot on Slack:</strong> Created a conversational bot using n8n,
-                                    Slack Bolt SDK, and OpenAI GPT-4o.</li>
-                                <li>Configured REST integrations with Jira and internal DBs.</li>
-                                <li>Implemented RAG, boosting answer accuracy by ≈25%.</li>
+                                <li>Designed and built an <strong>internal AI assistant on Slack</strong>, now in its
+                                    second iteration, running on OpenAI models and orchestrated in <strong>n8n</strong>.
+                                </li>
+                                <li>Implemented <strong>RAG</strong> over internal documentation, grounding answers in
+                                    company sources and adding contextual memory across a conversation.</li>
+                                <li>Connected the assistant to real systems through <strong>REST integrations and tool
+                                        calling</strong> — Jira, Google Drive and internal services — so it can take
+                                    action, not only answer.</li>
+                                <li>Worked with <strong>MCP (Model Context Protocol)</strong> to expose tools and
+                                    context to models through a standard interface.</li>
+                                <li><strong>Evaluated GraphRAG</strong> against the existing retrieval pipeline and
+                                    recommended against adoption — the accuracy gains did not justify the added
+                                    complexity and cost.</li>
                             </ul>
                         </div>
                     </div>
@@ -135,13 +174,14 @@
                     <div class="timeline-item">
                         <div class="timeline-date">May 2022 - Jul 2024</div>
                         <div class="timeline-content">
-                            <h3>Unreal Developer</h3>
-                            <h4>RAVEGAN</h4>
+                            <h3>Unreal Engine Developer</h3>
+                            <h4>Ravegan — Remote</h4>
                             <ul>
-                                <li>Developed multiplayer games on <strong>Unreal Engine 4</strong> (Psyker, Party
-                                    Game).</li>
-                                <li>Developed single-player games on <strong>Unreal Engine 5</strong> (Roguelike).</li>
-                                <li>Worked on <strong>Unity</strong> projects (Blue Rider Neon).</li>
+                                <li>Built <strong>replicated multiplayer systems</strong> in C++ and Blueprints —
+                                    distributed state, server authority and consistency under latency.</li>
+                                <li>Designed extensible character ability architecture with the <strong>Gameplay
+                                        Ability System</strong>, plus NPC decision systems using behavior trees.</li>
+                                <li>Ran internal code reviews and system refactors across UE4 and UE5 projects.</li>
                             </ul>
                         </div>
                     </div>
@@ -150,10 +190,11 @@
                         <div class="timeline-date">Nov 2021 - Mar 2022</div>
                         <div class="timeline-content">
                             <h3>Videogame Developer</h3>
-                            <h4>LIVEMEDIA</h4>
+                            <h4>Livemedia — Remote</h4>
                             <ul>
-                                <li>Developed single-player web games for Cartoon Network, Discovery Kids, and
-                                    Nickelodeon using Phaser (JS).</li>
+                                <li>Developed browser games for <strong>Cartoon Network</strong> and <strong>Discovery
+                                        Kids</strong> in Phaser (JavaScript), translating design requirements into
+                                    maintainable code.</li>
                             </ul>
                         </div>
                     </div>
@@ -165,37 +206,53 @@
         <section id="projects" class="section projects">
             <div class="container">
                 <h2 class="section-title">Projects</h2>
+
+                <h3 class="projects-subtitle">AI &amp; Automation</h3>
                 <div class="projects-grid">
-                    <!-- 
-                        HOW TO ADD PROJECT IMAGES:
-                        1. Save your image (e.g., 'my-game.jpg') into the 'assets' folder.
-                        2. Find the 'project-image' div for the specific project below.
-                        3. Change the url portion of the style attribute:
-                           FROM: url('assets/placeholder_bot.jpg')
-                           TO:   url('assets/my-game.jpg')
-                        
-                        Example:
-                        <div class="project-image" style="background-image: linear-gradient(to bottom, transparent, #0a0a0a), url('assets/super-cool-game.png');">
-                        </div>
-                    -->
-                    <!-- Python Bot -->
+                    <!-- Internal AI Assistant -->
                     <div class="project-card">
                         <div class="project-image"
                             style="background-image: linear-gradient(to bottom, transparent, #0a0a0a), url('assets/technical-support-bot.jpg');">
                         </div>
                         <div class="project-info">
-                            <h3>Technical Support Bot</h3>
-                            <p>An intelligent Slack bot for automating internal workflows and answering queries using
-                                GPT-4o and RAG.</p>
+                            <h3>Internal AI Assistant</h3>
+                            <p>A Slack assistant for internal technical support, now in its second iteration. Answers
+                                are grounded in company documentation through RAG, and tool calling lets it act on
+                                Jira, Drive and internal services instead of only replying.</p>
                             <div class="project-tags">
                                 <span>n8n</span>
-                                <span>drive</span>
                                 <span>OpenAI</span>
-                                <span>Slack SDK</span>
                                 <span>RAG</span>
+                                <span>MCP</span>
+                                <span>Slack SDK</span>
+                                <span>Google Drive</span>
                             </div>
+                            <p class="project-note">Internal system at Cintelink — not publicly accessible.</p>
                         </div>
                     </div>
+                    <!-- GraphRAG evaluation -->
+                    <div class="project-card">
+                        <div class="project-image no-photo" aria-hidden="true">
+                            <span>GraphRAG&nbsp;vs&nbsp;RAG</span>
+                        </div>
+                        <div class="project-info">
+                            <h3>Retrieval Evaluation</h3>
+                            <p>Stood up GraphRAG and benchmarked it against the retrieval pipeline already in
+                                production. The accuracy gains were not meaningful enough to justify the operational
+                                complexity and cost, so I recommended keeping the existing approach.</p>
+                            <div class="project-tags">
+                                <span>GraphRAG</span>
+                                <span>RAG</span>
+                                <span>Benchmarking</span>
+                                <span>Technical Evaluation</span>
+                            </div>
+                            <p class="project-note">A decision not to adopt is still an engineering result.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="projects-subtitle">Game Development</h3>
+                <div class="projects-grid">
                     <!-- Psyker -->
                     <div class="project-card">
                         <div class="project-image"
@@ -203,14 +260,32 @@
                         </div>
                         <div class="project-info">
                             <h3>Psyker</h3>
-                            <p>Unreal 4 NFT Project. A 3D Street Fighter-like fighting game with multiplayer networking.
-                            </p>
+                            <p>3D multiplayer fighting game built in Unreal Engine 4. Gameplay systems, UI and
+                                networking in C++ and Blueprints.</p>
                             <div class="project-tags">
                                 <span>Unreal Engine 4</span>
                                 <span>C++</span>
                                 <span>Multiplayer</span>
                             </div>
-                            <a href="https://psyker.game/" target="_blank" class="project-link">Visit Website</a>
+                            <a href="https://psyker.game/" target="_blank" rel="noopener" class="project-link">Visit
+                                Website</a>
+                        </div>
+                    </div>
+                    <!-- Roguelike -->
+                    <div class="project-card">
+                        <div class="project-image"
+                            style="background-image: linear-gradient(to bottom, transparent, #0a0a0a), url('assets/Roguelike-project-unreal.jpg');">
+                        </div>
+                        <div class="project-info">
+                            <h3>Roguelike Prototype</h3>
+                            <p>3D roguelike in Unreal Engine 5. Abilities and weapons architected with the Gameplay
+                                Ability System, plus AI behaviors in C++ and Blueprints.</p>
+                            <div class="project-tags">
+                                <span>Unreal Engine 5</span>
+                                <span>GAS</span>
+                                <span>C++</span>
+                            </div>
+                            <p class="project-note">Unreleased.</p>
                         </div>
                     </div>
                     <!-- Party Game -->
@@ -220,13 +295,14 @@
                         </div>
                         <div class="project-info">
                             <h3>Party Game</h3>
-                            <p>Unreal 4 3D mix of minigames inspired by Fall Guys. Features networked multiplayer and
-                                custom UI. Not Released.</p>
+                            <p>Multiplayer party game inspired by Fall Guys. Minigame logic, UI systems and replicated
+                                gameplay features, with NPC behavior trees.</p>
                             <div class="project-tags">
-                                <span>Unreal Engine 4</span>
+                                <span>Unreal Engine</span>
                                 <span>Blueprints</span>
                                 <span>Networking</span>
                             </div>
+                            <p class="project-note">Unreleased.</p>
                         </div>
                     </div>
                     <!-- Blue Rider Neon -->
@@ -236,30 +312,14 @@
                         </div>
                         <div class="project-info">
                             <h3>Blue Rider Neon</h3>
-                            <p>A 2D Space Shooter made in Unity. Focus on gameplay mechanics and behavior trees.</p>
+                            <p>2D space shooter built in Unity. Gameplay mechanics, UI and AI behavior systems.</p>
                             <div class="project-tags">
                                 <span>Unity</span>
                                 <span>C#</span>
                                 <span>2D</span>
                             </div>
-                            <a href="https://rb.gy/7m87at" target="_blank" class="project-link">View Project</a>
-                        </div>
-                    </div>
-                    <!-- Roguelike -->
-                    <div class="project-card">
-                        <div class="project-image"
-                            style="background-image: linear-gradient(to bottom, transparent, #0a0a0a), url('assets/Roguelike-project-unreal.jpg');">
-                        </div>
-                        <div class="project-info">
-                            <h3>Roguelike Game</h3>
-                            <p>Unreal 5 3D character game with abilities and weapons, inspired by The Binding of Isaac.
-                                Not Released.
-                            </p>
-                            <div class="project-tags">
-                                <span>Unreal Engine 5</span>
-                                <span>GAS</span>
-                                <span>C++</span>
-                            </div>
+                            <a href="https://rb.gy/7m87at" target="_blank" rel="noopener" class="project-link">View
+                                Project</a>
                         </div>
                     </div>
                 </div>
@@ -271,16 +331,17 @@
             <div class="container">
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="contact-content">
-                    <p>Interested in working together or have a question? Feel free to reach out.</p>
+                    <p>Open to AI engineering roles and interesting problems. Feel free to reach out.</p>
                     <div class="contact-links">
-                        <a href="assets/cv.pdf" target="_blank" class="contact-item">
-                            <span class="icon">📄</span>
+                        <a href="assets/cv.pdf" target="_blank" rel="noopener" class="contact-item">
+                            <span class="icon" aria-hidden="true">📄</span>
                             <span>Download CV</span>
                         </a>
                         <a href="mailto:nicomramallo@gmail.com" class="contact-item">
                             <span class="icon">
                                 <!-- Mailbox Icon -->
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                    aria-hidden="true">
                                     <path
                                         d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
                                         fill="none" class="mailbox-bg" />
@@ -290,12 +351,13 @@
                             </span>
                             <span>nicomramallo@gmail.com</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/nicolas-ramallo" target="_blank" class="contact-item">
-                            <span class="icon">🔗</span>
+                        <a href="https://www.linkedin.com/in/nicolas-ramallo" target="_blank" rel="noopener"
+                            class="contact-item">
+                            <span class="icon" aria-hidden="true">🔗</span>
                             <span>LinkedIn Profile</span>
                         </a>
-                        <a href="https://github.com/NMRamallo" target="_blank" class="contact-item">
-                            <span class="icon">💻</span>
+                        <a href="https://github.com/NMRamallo" target="_blank" rel="noopener" class="contact-item">
+                            <span class="icon" aria-hidden="true">💻</span>
                             <span>GitHub Profile</span>
                         </a>
                     </div>
@@ -306,7 +368,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Nicolas Ramallo. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> Nicolás Ramallo. Built with plain HTML, CSS and JavaScript.</p>
         </div>
     </footer>
 

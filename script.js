@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Custom Cursor
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    // --- Custom Cursor (pointer devices only) ---
     const cursor = document.querySelector('.cursor');
     const follower = document.querySelector('.cursor-follower');
+    const finePointer = window.matchMedia('(pointer: fine)').matches;
 
-    // Only active on desktop
-    if (window.innerWidth > 768) {
+    if (finePointer && cursor && follower) {
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
@@ -31,12 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Scroll Animations (Intersection Observer)
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    };
-
+    // --- Scroll Animations ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -44,55 +42,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-        section.classList.add('fade-up'); // Add class for CSS to target
+    document.querySelectorAll('.section').forEach(section => {
+        section.classList.add('fade-up');
         observer.observe(section);
     });
 
-    // Mobile Menu Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    // --- Mobile Menu ---
+    // Presentation lives in style.css under `.nav-links.active`; this only
+    // flips the class, so resizing back to desktop can't strand inline styles.
+    const closeMenu = () => {
+        if (!navLinks || !navLinks.classList.contains('active')) return;
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+    };
 
-    if (hamburger) {
+    if (hamburger && navLinks) {
         hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
+            const isOpen = navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active', isOpen);
+            hamburger.setAttribute('aria-expanded', String(isOpen));
+        });
 
-            // Simple mobile menu styles injection if handled via JS class
-            if (navLinks.classList.contains('active')) {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '70px';
-                navLinks.style.right = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'rgba(10, 10, 10, 0.95)';
-                navLinks.style.padding = '20px';
-                navLinks.style.borderBottom = '1px solid #333';
-            } else {
-                navLinks.style.display = ''; // Revert to css
-            }
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) closeMenu();
         });
     }
 
-    // Smooth Scroll for Anchors
+    // --- Smooth Scroll ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (!target) return;
+
             e.preventDefault();
-
-            // Close mobile menu if open
-            if (navLinks && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                hamburger.classList.remove('active');
-                navLinks.style.display = '';
-            }
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            closeMenu();
+            target.scrollIntoView({ behavior: 'smooth' });
         });
     });
+
+    // --- Footer year ---
+    const year = document.getElementById('year');
+    if (year) year.textContent = new Date().getFullYear();
 });
