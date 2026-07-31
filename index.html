@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolás Ramallo | AI Engineer</title>
     <meta name="description"
-        content="AI Engineer based in Córdoba, Argentina. I build LLM-powered assistants and automations connected to real company systems — n8n, RAG, MCP and tool calling — with a background in C++ and multiplayer engineering.">
+        content="AI Engineer based in Córdoba, Argentina. I build LLM-powered assistants and automations that people actually use — RAG, identity-aware authorization and workflow automation — with a background in C++ and multiplayer engineering.">
 
     <!-- Social preview (LinkedIn, Slack, X) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nmramallo.github.io/Portfolio/">
     <meta property="og:title" content="Nicolás Ramallo | AI Engineer">
     <meta property="og:description"
-        content="I build LLM-powered assistants and automations connected to the systems a company actually runs on.">
+        content="I build AI systems that do real work inside a company — assistants people actually use, integrated into the tools and workflows they already have.">
     <meta name="twitter:card" content="summary">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,8 +52,8 @@
             <div class="container">
                 <h1>Nicolás Ramallo</h1>
                 <h2 class="subtitle">AI Engineer</h2>
-                <p class="description">I build LLM-powered assistants and automations connected to the systems a
-                    company actually runs on.</p>
+                <p class="description">I build AI systems that do real work inside a company — assistants people
+                    actually use, integrated into the tools and workflows they already have.</p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
                     <a href="#contact" class="btn btn-secondary">Contact Me</a>
@@ -73,27 +73,27 @@
                 <div class="about-content">
                     <div class="about-text">
                         <p>I build AI systems that do real work inside a company — assistants people actually use,
-                            wired into the tools they already have.</p>
+                            integrated into the tools and workflows they already have.</p>
 
-                        <p>At <strong>Cintelink</strong> I built an AI assistant embedded in the company platform.
-                            The interesting part isn't the model — it's the <strong>authorization</strong>. The
-                            assistant acts on behalf of the user who is already signed in, so when it reaches into
-                            Zendesk tickets, Jira issues or operational data exposed through <strong>MCP</strong>,
-                            every request is scoped to that person's own permissions. It surfaces what they are
-                            entitled to see, and nothing else.</p>
+                        <p>At <strong>Cintelink</strong> I built an AI assistant embedded in the company platform,
+                            with a strong focus on <strong>identity-aware authorization</strong>. The assistant
+                            operates within the user's existing access context, preserving the permission boundaries
+                            already enforced by the platform and connected systems.</p>
 
-                        <p>Underneath it sits the plumbing that makes it useful: ingestion pipelines keeping Jira and
-                            Zendesk data queryable, retrieval grounded in internal documentation instead of model
-                            memory, and workflow automation across Slack — most of it orchestrated in
-                            <strong>n8n</strong>.</p>
+                        <p>I also built the infrastructure that makes the assistant useful: ingestion and retrieval
+                            pipelines, responses grounded in internal knowledge rather than model memory, and workflow
+                            automation across operational and collaboration tools.</p>
 
-                        <p>Before AI I spent about two years in <strong>Unreal Engine and C++</strong>, building
-                            replicated multiplayer systems. That background is why I treat LLM work as engineering:
-                            state, latency and failure modes are familiar problems wearing new clothes.</p>
+                        <p>Before AI I spent around two years working with <strong>Unreal Engine and C++</strong>,
+                            building replicated multiplayer systems. That background is why I approach LLM
+                            applications as engineering systems: state, latency, observability and failure modes are
+                            familiar problems in a new domain.</p>
 
-                        <p>I try to measure before adopting. When I evaluated <strong>GraphRAG</strong> as an upgrade
-                            to our retrieval pipeline, the gains didn't justify the added complexity and cost — so I
-                            recommended against it. Knowing when <em>not</em> to add a technology is part of the job.</p>
+                        <p>I evaluate new techniques empirically before adopting them. In one case I assessed
+                            <strong>graph-based retrieval</strong> as a potential improvement to our retrieval
+                            architecture and concluded that the measured gains did not justify the added operational
+                            complexity — so I recommended against adoption. Knowing when <em>not</em> to add a
+                            technology is part of the job.</p>
 
                         <h3 class="skills-title">Skills</h3>
                         <div class="skills-grid">
@@ -113,11 +113,11 @@
                                 <h4>Integrations &amp; Data</h4>
                                 <div class="tags">
                                     <span>REST APIs</span>
-                                    <span>Zendesk</span>
+                                    <span>Identity-aware Authorization</span>
+                                    <span>Data Ingestion Pipelines</span>
                                     <span>Jira</span>
                                     <span>Slack Bolt SDK</span>
                                     <span>Google Drive API</span>
-                                    <span>Data Ingestion Pipelines</span>
                                     <span>Webhooks</span>
                                     <span>Python</span>
                                 </div>
@@ -162,20 +162,18 @@
                             <h3>IT Analyst / AI Developer</h3>
                             <h4>Cintelink — Córdoba, Argentina</h4>
                             <ul>
-                                <li>Built an <strong>AI assistant embedded in the company platform</strong> that acts
-                                    on behalf of the signed-in user, so every request it makes to Zendesk, Jira and
-                                    internal data is scoped to that person's own permissions.</li>
-                                <li>Exposed company operational data to the assistant through <strong>MCP (Model
-                                        Context Protocol)</strong>, alongside per-user access to Zendesk tickets and
-                                    Jira issues.</li>
-                                <li>Built the <strong>ingestion pipelines</strong> that keep Jira and Zendesk ticket
-                                    data queryable by the assistant, orchestrated in <strong>n8n</strong>.</li>
-                                <li>Implemented <strong>RAG</strong> over internal documentation, grounding answers in
-                                    company sources and adding contextual memory across a conversation.</li>
-                                <li>Automated internal workflows across Slack and email in n8n.</li>
-                                <li><strong>Evaluated GraphRAG</strong> against the existing retrieval pipeline and
-                                    recommended against adoption — the accuracy gains did not justify the added
-                                    complexity and cost.</li>
+                                <li>Built an <strong>AI assistant embedded in the company platform</strong>, with a
+                                    strong focus on <strong>identity-aware authorization</strong> — the assistant
+                                    operates within each user's existing access context, preserving the permission
+                                    boundaries already enforced by the platform.</li>
+                                <li>Built the <strong>ingestion and retrieval pipelines</strong> behind it, grounding
+                                    responses in internal knowledge rather than model memory, with contextual memory
+                                    across a conversation.</li>
+                                <li>Developed <strong>workflow automation</strong> across operational and
+                                    collaboration tools.</li>
+                                <li><strong>Evaluated graph-based retrieval</strong> as a potential improvement to the
+                                    existing retrieval architecture; the measured gains did not justify the added
+                                    operational complexity, and I recommended against adoption.</li>
                             </ul>
                         </div>
                     </div>
@@ -226,35 +224,35 @@
                         <div class="project-info">
                             <h3>Platform AI Assistant</h3>
                             <p>A support assistant embedded in the Cintelink platform, now in its second iteration.
-                                It acts on behalf of the signed-in user — surfacing their Zendesk tickets, their Jira
-                                issues and operational data through MCP, always within their own permissions. Answers
-                                are grounded in company documentation through RAG.</p>
+                                Built around identity-aware authorization: it operates within each user's existing
+                                access context, preserving the permission boundaries the platform already enforces.
+                                Responses are grounded in internal knowledge rather than model memory.</p>
                             <div class="project-tags">
-                                <span>n8n</span>
-                                <span>OpenAI</span>
+                                <span>LLM Applications</span>
                                 <span>RAG</span>
-                                <span>MCP</span>
-                                <span>Zendesk</span>
-                                <span>Jira</span>
+                                <span>Identity-aware Authorization</span>
+                                <span>Retrieval Pipelines</span>
+                                <span>Workflow Automation</span>
                             </div>
                             <p class="project-note">Internal system at Cintelink — not publicly accessible.</p>
                         </div>
                     </div>
-                    <!-- GraphRAG evaluation -->
+                    <!-- Retrieval evaluation -->
                     <div class="project-card">
                         <div class="project-image no-photo" aria-hidden="true">
-                            <span>GraphRAG&nbsp;vs&nbsp;RAG</span>
+                            <span>Measure&nbsp;First</span>
                         </div>
                         <div class="project-info">
                             <h3>Retrieval Evaluation</h3>
-                            <p>Stood up GraphRAG and benchmarked it against the retrieval pipeline already in
-                                production. The accuracy gains were not meaningful enough to justify the operational
-                                complexity and cost, so I recommended keeping the existing approach.</p>
+                            <p>Assessed graph-based retrieval as a potential improvement to the retrieval
+                                architecture already in production. The measured gains did not justify the added
+                                operational complexity, so I recommended against adoption and kept the existing
+                                approach.</p>
                             <div class="project-tags">
-                                <span>GraphRAG</span>
                                 <span>RAG</span>
                                 <span>Benchmarking</span>
                                 <span>Technical Evaluation</span>
+                                <span>Architecture Decisions</span>
                             </div>
                             <p class="project-note">A decision not to adopt is still an engineering result.</p>
                         </div>
