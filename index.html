@@ -75,11 +75,17 @@
                         <p>I build AI systems that do real work inside a company — assistants people actually use,
                             wired into the tools they already have.</p>
 
-                        <p>At <strong>Cintelink</strong> I design and operate LLM-powered automations: an internal
-                            Slack assistant, now in its second iteration; retrieval over company documentation so
-                            answers are grounded in real sources instead of model memory; and integrations that let
-                            the model <em>act</em> on Jira, Drive and internal services rather than just reply. Most
-                            of it is orchestrated in n8n.</p>
+                        <p>At <strong>Cintelink</strong> I built an AI assistant embedded in the company platform.
+                            The interesting part isn't the model — it's the <strong>authorization</strong>. The
+                            assistant acts on behalf of the user who is already signed in, so when it reaches into
+                            Zendesk tickets, Jira issues or operational data exposed through <strong>MCP</strong>,
+                            every request is scoped to that person's own permissions. It surfaces what they are
+                            entitled to see, and nothing else.</p>
+
+                        <p>Underneath it sits the plumbing that makes it useful: ingestion pipelines keeping Jira and
+                            Zendesk data queryable, retrieval grounded in internal documentation instead of model
+                            memory, and workflow automation across Slack — most of it orchestrated in
+                            <strong>n8n</strong>.</p>
 
                         <p>Before AI I spent about two years in <strong>Unreal Engine and C++</strong>, building
                             replicated multiplayer systems. That background is why I treat LLM work as engineering:
@@ -104,12 +110,14 @@
                                 </div>
                             </div>
                             <div class="skill-category">
-                                <h4>Integrations</h4>
+                                <h4>Integrations &amp; Data</h4>
                                 <div class="tags">
                                     <span>REST APIs</span>
-                                    <span>Slack Bolt SDK</span>
+                                    <span>Zendesk</span>
                                     <span>Jira</span>
+                                    <span>Slack Bolt SDK</span>
                                     <span>Google Drive API</span>
+                                    <span>Data Ingestion Pipelines</span>
                                     <span>Webhooks</span>
                                     <span>Python</span>
                                 </div>
@@ -154,16 +162,17 @@
                             <h3>IT Analyst / AI Developer</h3>
                             <h4>Cintelink — Córdoba, Argentina</h4>
                             <ul>
-                                <li>Designed and built an <strong>internal AI assistant on Slack</strong>, now in its
-                                    second iteration, running on OpenAI models and orchestrated in <strong>n8n</strong>.
-                                </li>
+                                <li>Built an <strong>AI assistant embedded in the company platform</strong> that acts
+                                    on behalf of the signed-in user, so every request it makes to Zendesk, Jira and
+                                    internal data is scoped to that person's own permissions.</li>
+                                <li>Exposed company operational data to the assistant through <strong>MCP (Model
+                                        Context Protocol)</strong>, alongside per-user access to Zendesk tickets and
+                                    Jira issues.</li>
+                                <li>Built the <strong>ingestion pipelines</strong> that keep Jira and Zendesk ticket
+                                    data queryable by the assistant, orchestrated in <strong>n8n</strong>.</li>
                                 <li>Implemented <strong>RAG</strong> over internal documentation, grounding answers in
                                     company sources and adding contextual memory across a conversation.</li>
-                                <li>Connected the assistant to real systems through <strong>REST integrations and tool
-                                        calling</strong> — Jira, Google Drive and internal services — so it can take
-                                    action, not only answer.</li>
-                                <li>Worked with <strong>MCP (Model Context Protocol)</strong> to expose tools and
-                                    context to models through a standard interface.</li>
+                                <li>Automated internal workflows across Slack and email in n8n.</li>
                                 <li><strong>Evaluated GraphRAG</strong> against the existing retrieval pipeline and
                                     recommended against adoption — the accuracy gains did not justify the added
                                     complexity and cost.</li>
@@ -215,17 +224,18 @@
                             style="background-image: linear-gradient(to bottom, transparent, #0a0a0a), url('assets/technical-support-bot.jpg');">
                         </div>
                         <div class="project-info">
-                            <h3>Internal AI Assistant</h3>
-                            <p>A Slack assistant for internal technical support, now in its second iteration. Answers
-                                are grounded in company documentation through RAG, and tool calling lets it act on
-                                Jira, Drive and internal services instead of only replying.</p>
+                            <h3>Platform AI Assistant</h3>
+                            <p>A support assistant embedded in the Cintelink platform, now in its second iteration.
+                                It acts on behalf of the signed-in user — surfacing their Zendesk tickets, their Jira
+                                issues and operational data through MCP, always within their own permissions. Answers
+                                are grounded in company documentation through RAG.</p>
                             <div class="project-tags">
                                 <span>n8n</span>
                                 <span>OpenAI</span>
                                 <span>RAG</span>
                                 <span>MCP</span>
-                                <span>Slack SDK</span>
-                                <span>Google Drive</span>
+                                <span>Zendesk</span>
+                                <span>Jira</span>
                             </div>
                             <p class="project-note">Internal system at Cintelink — not publicly accessible.</p>
                         </div>
